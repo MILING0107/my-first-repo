@@ -1,0 +1,10 @@
+# Python 运行时生成的缓存，不用上传
+__pycache__/
+*.pyc
+
+# Thonny 有时会生成的本地文件
+.thonny/
+
+# 系统文件
+Thumbs.db
+desktop.ini
