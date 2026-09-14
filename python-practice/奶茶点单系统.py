@@ -24,6 +24,13 @@ def order_milk_tea(tea_name, base_price, *args, **kwargs):
     cup_size = kwargs.get("大小", "中杯")
     if cup_size == "大杯":
         total += 3
+    
+    # ===== 新增：会员折扣 =====
+    is_member = kwargs.get("会员",False)
+    if is_member:
+        pay = total * 0.9
+    else:
+        pay = total
 
     # 输出订单
     print("-" * 40)
@@ -41,16 +48,21 @@ def order_milk_tea(tea_name, base_price, *args, **kwargs):
         for k, v in kwargs.items():
             print(f"    {k}：{v}")
     else:
-        print("    默认配置")
+            print("    默认配置")
 
     if cup_size == "大杯":
         print("大杯加价 +3元")
+    
+    if is_member:
+        print(f"会员9折：-{total-pay:.1f}元")
+        print(f"实付金额：{pay:.1f}元")
+    else:
+        print(f"订单总价：{total}元")
 
-    print(f"订单总价：{total}元")
     print("-" * 40)
 
-
+ 
 # 测试调用
-order_milk_tea("珍珠奶茶",12,"珍珠","奶盖",甜度="少糖",冰度="去冰",大小="大杯")
+order_milk_tea("珍珠奶茶",12,"珍珠","奶盖",甜度="少糖",冰度="去冰",大小="大杯",会员=True)
 order_milk_tea("可可奶茶",14,"奥利奥",甜度="无糖",冰度="常温",大小="中杯")
 order_milk_tea("四季春清茶",9)
