@@ -11,7 +11,7 @@
 
 - [x] 注册 GitHub 账号
 - [x] 创建第一个仓库
-- [ ] 完成第一次 push
+- [x] 完成第一次 push
 - [ ] 学会 commit / branch / merge
 - [ ] 给别人的项目提第一个 PR
 
