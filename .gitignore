@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 
+# Java 编译生成的字节码文件
+*.class
+
 # Thonny 有时会生成的本地文件
 .thonny/
 
